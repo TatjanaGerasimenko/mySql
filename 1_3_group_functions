@@ -1,0 +1,29 @@
+Выбор уникальных элементов столбца:
+
+SELECT DISTINCT author
+FROM book;
+
+Группировка данных при выборке:
+
+SELECT  author
+FROM book
+GROUP BY author;
+
+Групповые функции SUM и COUNT:
+
+SELECT author, SUM(amount)
+FROM book
+GROUP BY author;
+
+COUNT(*) —  подсчитывает  все записи, относящиеся к группе, в том числе и со значением NULL;
+COUNT(имя_столбца) — возвращает количество записей конкретного столбца (только NOT NULL), относящихся к группе.
+
+Групповые функции MIN, MAX, AVG:
+
+SELECT author, MIN(price) AS min_price
+FROM book
+GROUP BY author;
+
+SELECT author, MAX(price) AS max_price
+FROM book
+GROUP BY author;
